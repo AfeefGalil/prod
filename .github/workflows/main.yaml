@@ -1,5 +1,6 @@
 name: Prod
 on:
+  workflow_call:
   push:
     branches:
       - master
@@ -9,6 +10,7 @@ on:
 jobs:
   deploy_prod:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - name: deploying production
